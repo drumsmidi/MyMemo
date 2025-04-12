@@ -1,19 +1,19 @@
-Win2D ノウハウメモ書き
+Win2D ノウハウメモ書き  
 https://github.com/drumsmidi/DrumMidiEditorApp
 
-- CanvasControl
+- CanvasControl  
 　静的な描画に適している。
 
-- CanvasAnimatedControl
+- CanvasAnimatedControl  
 　WinUI3 では実装されていない。（2022/07時点）
 
-- CanvasSwapChainPanel
+- CanvasSwapChainPanel  
 　DirectXのプログラムしているとよく出てくる SwapChain
 
 # CanvasControl
 
 XAML
-```xml
+```xaml
 <UserControl 
     xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
     Unloaded="UserControl_Unloaded">
@@ -39,11 +39,11 @@ private void EditerCanvas_Draw( CanvasControl sender, CanvasDrawEventArgs args )
 ```
 # CanvasSwapChainPanel
 
-CanvasControl から CanvasSwapChainPanel への変更は簡単
+CanvasControl から CanvasSwapChainPanel への変更は簡単  
 Drawイベントがないので、非同期の描画ループ処理など、描画プロセスの実装が必要
 
 XAML
-```xml
+```xaml
 <UserControl
     x:Class="DrumMidiPlayerApp.pView.pPlayer.UserControlPanel"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -136,7 +136,7 @@ private void UserControl_Unloaded( object aSender, RoutedEventArgs aArgs )
 
 ## 画面ハードコピー
 
-オフスクリーンに書き込んで、CanvasBitmap を作成後
+オフスクリーンに書き込んで、CanvasBitmap を作成後  
 Bitmapへバッファコピーする。
 
 ```csharp
