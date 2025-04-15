@@ -9,6 +9,7 @@
 - [HTML](./Html/html.md)  
 - [Linux](./Linux/linux.md)  
 - Oracle  
+  - [Azure移行](./Oracle/oracle_azure.md)  
   - [AWR](./Oracle/oracle_awr.md)  
   - [統計情報](./Oracle/oracle_stats.md)  
   - [Object](./Oracle/oracle_object.md)  
