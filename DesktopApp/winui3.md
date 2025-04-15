@@ -1,4 +1,4 @@
-WinUI3 ノウハウメモ書き
+WinUI3 ノウハウメモ書き  
 https://github.com/drumsmidi/DrumMidiEditorApp
 
 # x:Bind
@@ -8,18 +8,18 @@ https://github.com/drumsmidi/DrumMidiEditorApp
   TextChanged="MusicInfoBgmFilePathTextBox_TextChanged" />
 ```
 
-- OneTime
+- OneTime  
 　　Page読み込み時に一度だけデータ取得
 
-- OneWay
-　　Page読み込み時に一度だけデータ取得。
-　　データに対して変更があった際に、画面側にも反映する。
+- OneWay  
+　　Page読み込み時に一度だけデータ取得。  
+　　データに対して変更があった際に、画面側にも反映する。  
 　　但し、自動で変更してくれるわけではなく意図的に通知が必要となる。
 
-- TwoWay
-　　OneWay の機能＋画面上で入力した値は、データに書き込みに行く。
-　　但し、Changedイベントなどでは、データに書き込みはまだ行われていない為
-　　イベント内でデータを使用する場合には注意が必要。
+- TwoWay  
+　　OneWay の機能＋画面上で入力した値は、データに書き込みに行く。  
+　　但し、Changedイベントなどでは、データに書き込みはまだ行われていない為  
+　　イベント内でデータを使用する場合には注意が必要。  
 　　また、ListView_SelectionChanged イベントなどはデータの書き換え後に処理される。
 
 
@@ -41,13 +41,13 @@ public sealed partial class PageMusic : Page, INotifyPropertyChanged
 }
 ```
 
-参考URL
+参考URL  
 https://docs.microsoft.com/ja-jp/windows/uwp/data-binding/function-bindings
 
 
 # リソース定義
 
-![](https://storage.googleapis.com/zenn-user-upload/4f7d5d9ee6f2-20250412.png)
+![image](https://github.com/user-attachments/assets/9654f374-3428-4b22-8594-56e95477cf0c)
 
 ## 多言語化
 
@@ -59,8 +59,8 @@ Package.appxmanifest ファイルをコード表示で表示し、リソース�
   </Resources>
 ```
 
-[Strings] フォルダ配下に [言語フォルダ]/Resources.resw を作成する。
-![](https://storage.googleapis.com/zenn-user-upload/2a158b6a9548-20250412.png)
+[Strings] フォルダ配下に [言語フォルダ]/Resources.resw を作成する。  
+![image](https://github.com/user-attachments/assets/18eb40f9-c5bc-4a3a-9ee7-0db56b432a3f)
 
 ## XAML内でのリソース参照方法
 
@@ -106,7 +106,7 @@ HelperResources.GetString( "DialogChangeKey/Content", "A", "B" )
 # ContentDialogの最大サイズを変更する
 
 デフォルト設定だと横幅が狭いので、拡張する場合は App.xaml内に設定を追加する
-```xml:App.xaml
+```xaml:App.xaml
 <Application
     x:Class="DrumMidiEditorApp.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -127,15 +127,15 @@ HelperResources.GetString( "DialogChangeKey/Content", "A", "B" )
 </Application>
 ```
 
-確か、デフォルト設定だと横幅が狭くて、下記のような２列表示ができなかった
-![](https://storage.googleapis.com/zenn-user-upload/803084ba4284-20250412.png)
+確か、デフォルト設定だと横幅が狭くて、下記のような２列表示ができなかった  
+![image](https://github.com/user-attachments/assets/1fe813a6-7068-4699-9efb-386dbf93c7d2)
 
 # ファイルからプログラムを開いた際に、ファイルパスを取得する方法
 
 ## 拡張子の関連付け
 
-Package.appxmanifest 内の宣言項目より、サポートされるファイルの種類を設定する。
-![](https://storage.googleapis.com/zenn-user-upload/635ce926bb90-20250412.png)
+Package.appxmanifest 内の宣言項目より、サポートされるファイルの種類を設定する。  
+![image](https://github.com/user-attachments/assets/188f7fcb-45cc-4b0c-b276-87388090bfa4)
 
 ## プログラム実行時のファイルパス取得方法
 
